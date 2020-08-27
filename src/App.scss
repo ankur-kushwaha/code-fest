@@ -1,0 +1,171 @@
+body{
+  color:white;
+  background:#032146;
+  font-family: 'Roboto';
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+}
+
+.top-header{
+  background-color: #172331;
+  padding:10px;
+  color:white;
+  .logo{
+    font-size:25px;
+    img{
+      margin-left: 25px;
+    }
+  }
+}
+
+.container{
+  display: flex;
+}
+
+.editor-container{
+  flex:1;
+
+  .language-selector{
+    background-color: #f8f8f2;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.left-aside{
+  padding:10px;
+  background-color: #172331;
+  width: 300px;
+
+  &.fixed{
+    position: fixed;
+    bottom: 0;
+    top: 95px;
+  }
+
+  button.create-new-btn{
+    cursor: pointer;
+    width: 100%;
+    background:#0073ff;
+    border-radius: 3px;
+    color:white;
+    border:none;
+    padding:15px;
+    font-weight: bold;
+    font-size: 16px;
+    &:active,&:focus{
+      background:#0063ff;
+      border:none;
+      outline:none;
+    }
+  }
+  .notes-container{
+    margin-top:10px;
+
+  }
+  
+  .note{
+    border-radius: 2px;
+    padding:7px 15px;
+    border: 1px solid #41a1f8;
+    color:#41a1f8;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    cursor: pointer;
+    border:1px solid 0063ff;
+    background-color: #272823;
+
+    .noteSubject{
+      flex:1;
+    }
+
+    &:hover,&.selected{
+      opacity:0.9
+    }
+
+    .delete-icon{
+      top: 3px;
+      position: relative;
+    }
+
+    .edit-icon{
+      display: initial;
+      margin-right: 14px;
+      top: 3px;
+      position: relative;
+    }
+
+    .delete-icon,.edit-icon{
+      display: none;
+      font-size:initial;
+    }
+
+    &:hover .delete-icon, &:hover .edit-icon{
+      display:initial
+    }
+  }
+  
+}
+
+.dialog-container{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+    right: 0;
+    top: 0; 
+    bottom: 0;
+    z-index: 10;
+    background: #ffffff2e;
+  .dialog{
+    padding: 20px;
+    background: #272823;
+    position: relative;
+    border-radius: 4px;
+  }
+  .icon{
+    position: absolute;
+    right: -17px;
+    cursor: pointer;
+    top: -16px;
+    font-size: 30px;
+  }
+}
+
+
+.create-new-note-dialog{
+  input{
+    padding: 6px;
+    border-radius: 2px;
+    margin-right: 10px;
+    border: none;
+    width: 295px;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    &:focus{
+      outline:none;
+    }
+  }
+  button{
+    border-radius: 3px;
+    padding: 10px;
+    background-color: #0072ff;
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: bold;
+  }
+}
+
